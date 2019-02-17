@@ -7,9 +7,9 @@
     "jupyterlab",
     "jupyterlab-extension"
   ],
-  "homepage": "https://github.com/my_name/myextension",
+  "homepage": "https://github.com/ppeeou/jupyterlab-xkcd",
   "bugs": {
-    "url": "https://github.com/my_name/myextension/issues"
+    "url": "https://github.com/ppeeou/jupyterlab-xkcd/issues"
   },
   "license": "BSD-3-Clause",
   "author": "hyunwoo",
@@ -21,7 +21,7 @@
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/my_name/myextension.git"
+    "url": "https://github.com/ppeeou/jupyterlab-xkcd.git"
   },
   "scripts": {
     "build": "tsc",

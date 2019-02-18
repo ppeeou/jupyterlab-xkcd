@@ -1,10 +1,13 @@
 import {
-  JupyterLab, JupyterLabPlugin, ILayoutRestorer
+  JupyterLab,
+  JupyterLabPlugin,
+  ILayoutRestorer,
 } from '@jupyterlab/application';
 
 import {
-  ICommandPalette, InstanceTracker
-} from '@jupyterlab/apputils'
+  ICommandPalette,
+  InstanceTracker,
+} from '@jupyterlab/apputils';
 
 import {
   JSONExt // new
@@ -14,22 +17,25 @@ import {
   Widget
 } from '@phosphor/widgets';
 
-import XkcdWidget from './XkcdWidget';
+// import XkcdWidget from './XkcdWidget';
+// import { Terminal as XkcdWidget } from './Widget';
+import MyWidget from './MyWidget';
 
 import '../style/index.css';
 
+
 function activate(app: JupyterLab, palette: ICommandPalette, restorer: ILayoutRestorer) {
-  console.log('JupyterLab extension jupyterlab_xkcd is activated!');
+  console.log('JupyterLab extension terminal widget is activated!!')
 
-  let widget: XkcdWidget = new XkcdWidget();
-
+  let widget: MyWidget = new MyWidget();
   const command: string = 'xkcd:open';
+
   app.commands.addCommand(command, {
     label: 'Create xkcd lab',
     execute: () => {
-      console.log('widget',widget)
+      console.log('widget spec', widget)
       if (!widget) {
-        widget = new XkcdWidget();
+        widget = new MyWidget();
         widget.update();
       }
 
@@ -48,7 +54,9 @@ function activate(app: JupyterLab, palette: ICommandPalette, restorer: ILayoutRe
   });
 
   palette.addItem({ command, category: 'XKCD-LAB' });
+
   let tracker = new InstanceTracker<Widget>({ namespace: 'xkcd' });
+
   restorer.restore(tracker, {
     command,
     args: () => JSONExt.emptyObject,

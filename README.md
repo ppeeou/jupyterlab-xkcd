@@ -30,3 +30,12 @@ npm run build
 jupyter lab build
 ```
 
+
+## conda env
+```
+conda create -n jupyterlab-ext -c conda-forge --override-channels nodejs jupyterlab cookiecutter git
+```
+
+```
+conda activate jupyterlab-ext
+```

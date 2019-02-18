@@ -11,3 +11,15 @@
 .jp-xkcdAttribution {
   margin: 20px auto;
 }
+
+.mywidget-container {
+  display: flex;
+  background: #ccc;
+}
+
+.mywidget-btn {
+  display: flex;
+  width: 200px;
+  height: 100px;
+  background: red;
+}
